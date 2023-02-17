@@ -1,0 +1,103 @@
+<section class="content">
+  <div class="container-fluid">
+    <div class="row">
+      <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+        <div class="card">
+          <div class="body">
+            <div class="table-responsive mat-elevation-z8 mt-4">
+              <div class="materialTableHeader">
+                <div class="row">
+                  <div class="col-lg-12">
+                    <ul class="header-buttons-left mt-n2">
+                      <li class="dropdown">
+                        <h2>
+                          <strong>Client User List</strong>
+                        </h2>
+                      </li>
+                      <li class="dropdown m-l-20">
+                        <label for="search-input"><i class="material-icons search-icon">search</i>
+                        </label>
+                        <input placeholder="Search" type="text" style="height: 37px" (keyup)="applyFilter($event)"
+                          class="browser-default search-field" aria-label="Search box" />
+                      </li>
+                      <li>
+                        <button style="color: #3f51b5" aria-label="Example icon button with a heart icon" mat-icon-button
+                          matTooltip="Add User" (click)="adduser()">
+                          <mat-icon style="font-size: xx-large">add</mat-icon>
+                        </button>
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <mat-table #table [dataSource]="dataSource" matSort class="mat-cell">
+                <ng-container matColumnDef="CandidateName">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-12'">Name
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"
+                    [ngClass]="'tbl-col-width-per-12'">
+                    {{ row?.CandidateName
+                    }}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="CandidateMobile">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-12'">Mobile                 </mat-header-cell>
+                  <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"
+                    [ngClass]="'tbl-col-width-per-12'">
+                    {{ row?.CandidateMobile }}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="CandidateEmail">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-12'">Email
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"
+                    [ngClass]="'tbl-col-width-per-12'">
+                    {{ row?.CandidateEmail }}</mat-cell>
+                </ng-container>
+                <ng-container matColumnDef="action">
+                  <mat-header-cell *matHeaderCellDef mat-sort-header [ngClass]="'tbl-col-width-per-12'">Action
+                  </mat-header-cell>
+                  <mat-cell *matCellDef="let row" (contextmenu)="onContextMenu($event, row)"
+                    [ngClass]="'tbl-col-width-per-12'">
+                    <mat-icon aria-label="Example icon button with a heart icon" matTooltip="Edit User"
+                    (click)="editclient(row)" style="font-size: large; color: rgb(94, 94, 94)">edit</mat-icon>
+                </mat-cell>
+                </ng-container>
+                
+                <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+                <mat-row *matRowDef="let row; columns: displayedColumns" [style.cursor]="'pointer'" matRipple>
+                </mat-row>
+              </mat-table>
+             
+              <mat-paginator #paginator [pageSize]="100" [pageSizeOptions]="[100, 125, 150, 175, 200]"
+                [showFirstLastButtons]="true">
+              </mat-paginator>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+</section>
+
+
+
+<!-- edit user modal -->
+<div class="backdrop" [ngStyle]="{ display: displayAddUpdateModal }"></div>
+<div class="modal" id="customers" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true"
+  [ngStyle]="{ display: displayAddUpdateModal }">
+  <div class="modal-dialog modal-lg" role="document">
+    <div class="modal-content" *ngIf="displayAddUpdateModal == 'block'">
+      <div class="modal-header header">
+        <h2 style="font-family: 'Poppins'">Edit User</h2>
+        <button type="button" (click)="closeAddUpdateModal()" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true" style="font-size: 30px" class="close-btn">&times;</span>
+        </button>
+      </div>
+      <div class="add-student">
+        <app-add-update-student [studentsForm]="studentsForm" studentObj (addStudent)="handelAddStudent($event)">
+        </app-add-update-student>
+      </div>
+    </div>
+  </div>
+</div>

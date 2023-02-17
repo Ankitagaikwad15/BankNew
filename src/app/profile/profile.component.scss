@@ -1,0 +1,139 @@
+.header h2 strong {
+    color: #00bcd4!important;
+    font-family: sans-serif;
+}
+
+.user-name {
+    font-family: 'Poppins';
+    padding: 12px;
+}
+
+.block-header {
+    height: 50px;
+}
+
+.list-card {
+    background: #FFFFFF;
+    padding: 20px;
+    border: none;
+    border-radius: 4px;
+    transition: all 0.2s ease;
+}
+
+.cc_card.one {
+    box-shadow: 0 -4px 10px 0 rgba(0, 0, 0, 0.10);
+}
+
+.mat-tab-body {
+    /* Removing the scrollbar from the Tabs card */
+    overflow-y: hidden !important;
+    overflow: hidden;
+}
+
+ ::ng-deep .mat-tab-header {
+    overflow-x: hidden !important;
+}
+
+ ::ng-deep .mat-tab-label-container {
+    overflow: hidden !important;
+}
+
+ ::ng-deep .mat-tab-header::-webkit-scrollbar {
+    // TO Remove horizontal scrollbar in tabs
+    display: none;
+}
+
+// test
+@media (max-width: 1024px) {
+     :host-context(.columns-2) .program-card {
+        width: 98%;
+    }
+}
+
+@media (max-width: 1024px) {
+    .program-card {
+        width: 47%;
+    }
+}
+
+@media (max-width: 768px) {
+    .program-card {
+        width: 98%;
+    }
+}
+
+.owner-details {
+    border: solid;
+    border-radius: 8px;
+    border-width: 1px;
+    border-color: lightgray;
+    background-image: linear-gradient(90deg, #e6f1ff, white);
+}
+
+.owner-name {
+    height: 17px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-family: 'Poppins';
+}
+
+.stag.outline {
+    background: rgb(148, 214, 148);
+    color: var(--brandTextColor);
+    font-size: 12px;
+    padding: 3px 13px;
+    border-radius: 997px;
+    height: 19px;
+}
+
+.sub-topic-container {
+    border-radius: 8px;
+    background-image: linear-gradient(90deg, #e6f1ff, white);
+    height: 110px;
+    font-family: 'Poppins';
+}
+
+.abc {
+    font-family: 'Poppins';
+}
+
+.abc1 {
+    font-family: 'Poppins';
+}
+
+.text-grey {
+    font-size: 14px;
+}
+
+.pqr {
+    font-size: 14px;
+}
+
+/////////////////////
+.container {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.centered {
+    position: absolute;
+    top: 48%;
+    left: 50%;
+    color: black;
+    font-weight: bold;
+    transform: translate(-50%, -50%);
+}
+
+.circle-icon {
+    background-color: #fff;
+    color: #4060f6;
+    padding: 15px;
+    font-size: 35px;
+    cursor: pointer;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+/////////////////

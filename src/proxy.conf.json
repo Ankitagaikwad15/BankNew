@@ -1,0 +1,18 @@
+{
+    "/nodejsApp/*": {
+        "target": "http://52.74.110.248",
+        "secure": true,
+        "logLevel": "debug",
+        "changeOrigin": true,
+        "pathRewrite": {
+            "^/nodejsApp/candidates/": "/nodejsApp/candidates/"
+
+        }
+    },
+    "/PortalContents/*": {
+        "target": "http://52.74.110.248",
+        "secure": true,
+        "logLevel": "debug",
+        "changeOrigin": true
+    }
+}

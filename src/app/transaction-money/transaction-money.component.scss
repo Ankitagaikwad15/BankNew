@@ -1,0 +1,291 @@
+.wordart {
+
+  // font-family: Arial, sans-serif;
+  font-family: 'Poppins';
+  font-size: 3em;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+  display: inline-block;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wordart.purple {
+    transform: skew(0, -10deg) scale(1, 1.5);
+    -webkit-transform: skew(0, -10deg) scale(1, 1.5);
+    -moz-transform: skew(0, -10deg) scale(1, 1.5);
+    -o-transform: skew(0, -10deg) scale(1, 1.5);
+    -ms-transform: skew(0, -10deg) scale(1, 1.5);
+}
+
+.wordart.purple .text {
+    letter-spacing: -0.01em;
+    // font-family: Impact;
+    font-family: 'Poppins';
+    background: #3f51b5;
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJod…IgaGVpZ2h0PSIxIiBmaWxsPSJ1cmwoI2dyYWQtdWNnZy1nZW5lcmF0ZWQpIiAvPgo8L3N2Zz4=);
+    background: -moz-linear-gradient(top,#3f51b5 0%, #2198ce 73%);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#3f51b5), color-stop(73%,#2198ce));
+    background: -webkit-linear-gradient(top,#3f51b5 0%, #2198ce 73%);
+    background: -o-linear-gradient(top, #3f51b5 0%, #2198ce 73%);
+    background: -ms-linear-gradient(top, #3f51b5 0%, #2198ce 73%);
+    background: linear-gradient(to bottom,#3f51b5 0%,#2198ce 73%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4222be', endColorstr='#3f51b5', GradientType=0);
+    -webkit-text-stroke: 0.01em #B28FFD;
+    filter: progid:DXImageTransform.Microsoft.Glow(Color=#b28ffd, Strength=1);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.count{
+  display: inline;
+}
+.card-size{
+  // display: flex;
+  flex-direction: row;
+  align-items: center;
+  border-radius: 5px;
+  vertical-align: middle;
+  padding: 10px;
+  margin-bottom: 10px;
+  background: #f6f4ff;
+}
+.InstructorName{
+  margin: 5px;
+ font-family: 'Poppins';
+}
+.course_size{
+  font-size: 14;
+}
+.price-row{
+  margin: 5px;
+}
+
+
+.footer{
+  border: none;
+  padding: 0px;
+  border-top: 1px solid lightgrey;
+}
+.close-btn{
+  font-size: 30px;
+}
+.buy-Btn{
+  display: inline-block;
+    font-size: 15px;
+    color: #fff;
+    padding: 10px 35px;
+    border-radius: 20px;
+    // background: #ffa442;
+    background: rebeccapurple;
+    text-transform: uppercase;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+.footer{
+  border: none;
+  padding: 0px;
+  border-top: 1px solid lightgrey;
+}
+
+.quotient-card{
+  height: 36em;
+}
+.termsAndConditon{
+  color: blue;
+    cursor: pointer;
+    font-size: 11px;
+}
+.rating-star{
+  padding: 5px;
+}
+.courseName:hover {
+  color: blue;
+}
+.card-statistic-4{
+  // height: 140px;
+  background: rgba(0,0,0,.65)
+}
+
+.fP4ZCw_3zBBXg{
+  background: #0e1318;
+  opacity: undefined;
+  color: white;
+  /* width: 160px; */
+  border-radius: 5px;
+}
+label{
+  border-radius: 10px;
+	padding: 2px 10px;
+	color: #fff;
+	display: inline-block;
+}
+.test-complait{
+  // border-right: 1px solid #c5c5c5;
+  padding-right: 10px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #28a745;
+  height: 25px;
+  cursor: pointer;
+  font-family: 'Poppins';
+}
+
+.container {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+.centered {
+  position: absolute;
+  top: 48%;
+  left: 50%;
+  color: black;
+    font-weight: bold;
+  transform: translate(-50%, -50%);
+}
+
+// background-color: #1a202e !important;
+//     box-shadow: 0 1px 5px rgb(0 0 0 / 25%);
+.get-point{
+  cursor: pointer;
+  border-right: 1px solid #c5c5c5;
+    padding-right: 10px;
+    font-size: 15px;
+    font-weight: 500;
+    color: #777;
+    text-align: center;
+}
+.share{
+  color:blue
+}
+
+.about{
+text-align: justify;
+}
+.d-logo{
+  height: 65px;
+}
+.d-compass{
+  height: 3cm;
+}
+.back{
+  background-color: cornflowerblue;
+}
+.margin-check {
+  display: inline-block;
+  position: relative;
+}
+
+.margin-check:after {
+  position: absolute;
+  content: '';
+  border-bottom: 3px solid #d2d7da;
+  width: 90%;
+  transform: translateX(-50%);
+  bottom: 5px;
+  left: 50%;
+}
+.life{
+  background-color: cadetblue;
+  width: 50%;
+  padding: 18px;
+}
+.important{
+  color: chartreuse;
+}
+.refer{
+  text-align: center;
+  font-weight: 500;
+  color: white;
+  font-family: 'Poppins';
+}
+.personality-free{
+  text-align: center;
+  font-weight: 500;
+  color: #777;
+  font-family: 'Poppins';
+  font-weight: 500;
+}
+.openPopupText{
+  cursor: pointer;
+}
+.card-1{
+  background-color: #385173;
+    border: 1px solid rgba(0,0,0,.1);
+}
+
+.circle-icon {
+  background-color: #fff;
+  color: #4060f6;
+  padding:30px;
+  font-size: 40px;
+  cursor: pointer;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.free-test-card{
+
+  background-color: #fff5f6;
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-width: 0px 0px 0px 0px;
+    border-color: #f7f7f7;
+    border-style: solid;
+}
+.span.openPopupText:hover {
+  color: blue;
+}
+.product-Name{
+  height: 8px;
+  font-size: 15px;
+  font-weight: 600;
+  color: #777; 
+  font-family: 'Poppins';
+}
+.phone{
+  color: #777; 
+}
+h1, h2,h3,h4,h5,h6 {
+  font-family: 'Poppins';
+  // color: #777; 
+}
+h5,strong{
+  font-family: 'Poppins';
+  color: #777; 
+} 
+thead,tr,th,tbody,tr,td,.col-xs-8 {
+  font-family: 'Poppins';
+}
+.narration{
+  list-style-type: disc !important;
+  font-family: 'Poppins';
+  font-size: 13px;
+  line-height: 17px;
+}
+ul li{
+  padding: 5px;
+}
+.offer-prise-card{
+  font-size: 20px;
+  padding-top: 5px;
+  box-shadow:3px 3px 0px 0px #4d41f34f;
+  margin-top: 19px;
+  margin-right: 15px;
+  background-color: orange;
+}
+.price-card{
+  margin-left: 10px; font-size: 20px;
+  padding-top: 5px;  margin-top: 19px;
+  margin-right: 15px; color: orange; box-shadow: 4px 4px 4px 2px #a48eefa6;
+}
+.btn-outline-info:hover {
+  background: #2aa3fb;
+  border-color: #2aa3fb;
+}
+.btn-outline-info:hover {
+  color: #fff;
+  background-color: #007bff;
+  border-color: #007bff;
+}

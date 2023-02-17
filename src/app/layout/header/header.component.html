@@ -1,0 +1,331 @@
+<!-- <nav #navbar class="navbar" [ngClass]="isNavbarShow ? 'active' : 'inactive'"> -->
+<nav #navbar class="navbar" [ngClass]="isNavbarShow ? 'active' : 'active'">
+  <div class="container-fluid">
+    <div class="navbar-header" style="background: #e0f6ff !important;">
+      <a href="#" onClick="return false;" class="navbar-toggle collapsed" data-toggle="collapse"
+        data-target="#navbar-collapse" aria-expanded="false"></a>
+      <!-- mobile menu bars -->
+      <a href="#" onClick="return false;" class="bars" (click)="mobileMenuSidebarOpen($event, 'overlay-open')"></a>
+      <!---routerLink="dashboard/main"-->
+    
+    </div>
+
+    <div class="collapse navbar-collapse" id="navbar-collapse">
+      <ul class="pull-left collapse-menu-icon">
+        <li>
+          <button mat-icon-button (click)="callSidemenuCollapse()" class="sidemenu-collapse">
+            <mat-icon style="color: black">menu</mat-icon>
+          </button>
+         
+        </li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <!-- Full Screen Button -->
+        <li class="fullscreen">
+          <button mat-icon-button (click)="callFullscreen()" class="nav-notification-icons">
+            <mat-icon style="color: black; margin-left: 100%">fullscreen</mat-icon>
+          </button>
+        </li>
+       <li>
+          <h1 *ngIf="online">Online</h1>
+          <h1 *ngIf="offline">Offline</h1>
+        </li>
+        <li>
+          <span style="padding: 10px; color: #2b982b">{{ c_name }}</span>
+        </li>
+
+        <!-- #START# Notifications-->
+        <li *ngIf="normalUserLodging == '200'" class="nav-item" ngbDropdown>
+          <div *ngIf="displayCandidateNotificationheaderModal" ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 250px" [perfectScrollbar]>
+              <ul class="menu">
+                <li>
+                  <a href="#" *ngFor="let notification of notifications" onClick="return false;">
+                    <span class="table-img msg-user">
+                      <img src="{{ notification.userImg }}" alt="" />
+                    </span>
+                    <span class="menu-info">
+                      <span class="menu-title">{{
+                        notification.userName
+                        }}</span>
+                      <span class="menu-desc">
+                        <i class="material-icons">access_time</i>
+                        {{ notification.time }}
+                      </span>
+                      <span class="menu-desc">{{ notification.message }}</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a class="text-center d-block border-top py-1" style="cursor: pointer"
+              (click)="goToAllCandidateNotification()">Read All Notifications</a>
+          </div>
+        </li>
+
+        <!-- Start news notifications -->
+        <li *ngIf="normalUserLodging == '200'" class="nav-item" ngbDropdown>
+          <div *ngIf="displayNewsheaderModal" ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 250px" [perfectScrollbar]>
+              <ul class="menu">
+                <li>
+                  <a href="#" *ngFor="let newsObj of newsnotifications">
+                    <span class="table-img msg-user">
+                      <img src="assets/images/images.jpg" alt="" />
+                    </span>
+                    <span class="menu-info">
+                      <span class="menu-title">{{ newsObj?.newsTitle }}</span>
+
+                      <span class="menu-desc">{{
+                        newsObj?.newsDescription
+                        }}</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a class="text-center d-block border-top py-1" style="cursor: pointer" (click)="goToNewsPage()">Read
+              More</a>
+          </div>
+        </li>
+
+        <!-- #END# Notifications-->
+
+        <li *ngIf="normalUserLodging == '200'" class="nav-item user_profile" ngbDropdown>
+          <a *ngIf="CandidateProfileImageName" href="#" onClick="return false;" ngbDropdownToggle role="button"
+            class="nav-notification-icons pt-0">
+            <img style="cursor: pointer" src="{{ profileImg }}{{ CandidateProfileImageName }}" class="rounded-circle"
+              width="32" height="32" alt="User" />
+          </a>
+          <a *ngIf="!CandidateProfileImageName" href="#" onClick="return false;" ngbDropdownToggle role="button"
+            class="nav-notification-icons pt-0">
+            <img style="cursor: pointer" src="{{ candidateProfile }}" class="rounded-circle" width="32" height="32"
+              alt="User" />
+          </a>
+          <div ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 300px" [perfectScrollbar]>
+              <ul class="menu">
+                <li class="body">
+                  <ul class="user_dw_menu">
+                    <li>
+                      <a href="javascript:void(0);" (click)="gotToCandidateProfilePage()">
+                        <div class="icon-preview"><i class="fas fa-user"></i></div>&nbsp;
+                        <!-- <mat-icon aria-hidden="false" class="mr-2">face</mat-icon> -->
+                        Profile
+                      </a>
+                      <a href="javascript:void(0);" (click)="logout()">
+                        <mat-icon aria-hidden="false" style="font-weight: bold;" class="mr-2">power_settings_new
+                        </mat-icon>Logout
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <!-- #START# Notifications-->
+        <li *ngIf="superUserLodging == '100'" class="nav-item" ngbDropdown>
+          <div *ngIf="displayCandidateNotificationheaderModal" ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 250px" [perfectScrollbar]>
+              <ul class="menu">
+                <li>
+                  <a href="#" *ngFor="let notification of notifications" onClick="return false;">
+                    <span class="table-img msg-user">
+                      <img src="{{ notification.userImg }}" alt="" />
+                    </span>
+                    <span class="menu-info">
+                      <span class="menu-title">{{
+                        notification.userName
+                        }}</span>
+                      <span class="menu-desc">
+                        <i class="material-icons">access_time</i>
+                        {{ notification.time }}
+                      </span>
+                      <span class="menu-desc">{{ notification.message }}</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a class="text-center d-block border-top py-1" style="cursor: pointer"
+              (click)="goToAllCandidateNotification()">Read All Notifications</a>
+          </div>
+        </li>
+        <li *ngIf="superUserLodging == '300'" class="nav-item" ngbDropdown>
+          <div *ngIf="displayCandidateNotificationheaderModal" ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 250px" [perfectScrollbar]>
+              <ul class="menu">
+                <li>
+                  <a href="#" *ngFor="let notification of notifications" onClick="return false;">
+                    <span class="table-img msg-user">
+                      <img src="{{ notification.userImg }}" alt="" />
+                    </span>
+                    <span class="menu-info">
+                      <span class="menu-title">{{
+                        notification.userName
+                        }}</span>
+                      <span class="menu-desc">
+                        <i class="material-icons">access_time</i>
+                        {{ notification.time }}
+                      </span>
+                      <span class="menu-desc">{{ notification.message }}</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a class="text-center d-block border-top py-1" style="cursor: pointer"
+              (click)="goToAllCandidateNotification()">Read All Notifications</a>
+          </div>
+        </li>
+
+        <!-- Start news notifications -->
+        <li *ngIf="superUserLodging == '100'" class="nav-item" ngbDropdown>
+          <div *ngIf="displayNewsheaderModal" ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 250px" [perfectScrollbar]>
+              <ul class="menu">
+                <li>
+                  <a href="#" *ngFor="let newsObj of newsnotifications">
+                    <span class="table-img msg-user">
+                      <img src="assets/images/images.jpg" alt="" />
+                    </span>
+                    <span class="menu-info">
+                      <span class="menu-title">{{ newsObj?.newsTitle }}</span>
+
+                      <span class="menu-desc">{{
+                        newsObj?.newsDescription
+                        }}</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a class="text-center d-block border-top py-1" style="cursor: pointer" (click)="goToNewsPage()">Read
+              More</a>
+          </div>
+        </li>
+        <li *ngIf="superUserLodging == '300'" class="nav-item" ngbDropdown>
+          <div *ngIf="displayNewsheaderModal" ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 250px" [perfectScrollbar]>
+              <ul class="menu">
+                <li>
+                  <a href="#" *ngFor="let newsObj of newsnotifications">
+                    <span class="table-img msg-user">
+                      <img src="assets/images/images.jpg" alt="" />
+                    </span>
+                    <span class="menu-info">
+                      <span class="menu-title">{{ newsObj?.newsTitle }}</span>
+
+                      <span class="menu-desc">{{
+                        newsObj?.newsDescription
+                        }}</span>
+                    </span>
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <a class="text-center d-block border-top py-1" style="cursor: pointer" (click)="goToNewsPage()">Read
+              More</a>
+          </div>
+        </li>
+
+        <!-- #END# Notifications-->
+
+        <li *ngIf="superUserLodging == '100'" class="nav-item user_profile" ngbDropdown>
+          <a *ngIf="CandidateProfileImageName" href="#" onClick="return false;" ngbDropdownToggle role="button"
+            class="nav-notification-icons pt-0">
+            <img style="cursor: pointer" src="{{ profileImg }}{{ CandidateProfileImageName }}" class="rounded-circle"
+              width="32" height="32" alt="User" />
+          </a>
+          <a *ngIf="!CandidateProfileImageName" href="#" onClick="return false;" ngbDropdownToggle role="button"
+            class="nav-notification-icons pt-0">
+            <img style="cursor: pointer" src="{{ candidateProfile }}" class="rounded-circle" width="32" height="32"
+              alt="User" />
+          </a>
+
+          <div ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 300px" [perfectScrollbar]>
+              <ul class="menu">
+                <li class="body">
+                  <ul class="user_dw_menu">
+                    <li>
+                      <a href="javascript:void(0);" (click)="gotToProfilePage()">
+                        <div class="icon-preview"><i class="fas fa-user"></i></div>&nbsp;
+                        <!-- <mat-icon aria-hidden="false" class="mr-2">face</mat-icon> -->
+                        Profile
+                      </a>
+                      <a href="javascript:void(0);" (click)="superUserlogout()">
+                        <mat-icon aria-hidden="false" style="font-weight: bold;" class="mr-2">power_settings_new
+                        </mat-icon>Logout
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+
+        <li *ngIf="superUserLodging == '300'" class="nav-item user_profile" ngbDropdown>
+          <a *ngIf="CandidateProfileImageName" href="#" o ngbDropdownToggle class="nav-notification-icons pt-0">
+            <img src="{{ franchaiselogo }}{{ AppLogoURL }}" style="    height: 34px;" alt="" class="franchaiselogo" />
+          </a>
+        </li>
+        <li *ngIf="superUserLodging == '300'" class="nav-item user_profile" ngbDropdown>
+          <!-- <a *ngIf="CandidateProfileImageName" href="#" onClick="return false;" ngbDropdownToggle role="button"
+            class="nav-notification-icons pt-0">
+            <img src="{{ franchaiselogo }}{{ AppLogoURL }}" alt="" class="franchaiselogo" />
+          </a> -->
+          <a *ngIf="CandidateProfileImageName" href="#" onClick="return false;" ngbDropdownToggle role="button"
+            class="nav-notification-icons pt-0">
+            <img style="cursor: pointer" src="{{ franchaiseprofileImg }}{{ CandidateProfileImageName }}"
+              class="rounded-circle" width="32" height="32" alt="User" />
+          </a>
+          <a *ngIf="!CandidateProfileImageName" href="#" onClick="return false;" ngbDropdownToggle role="button"
+            class="nav-notification-icons pt-0">
+            <img style="cursor: pointer" src="{{ candidateProfile }}" class="rounded-circle" width="32" height="32"
+              alt="User" />
+          </a>
+
+          <div ngbDropdownMenu class="notification-dropdown pullDown">
+            <div class="noti-list" style="position: relative; max-width: 600px; max-height: 300px" [perfectScrollbar]>
+              <ul class="menu">
+                <li class="body">
+                  <ul class="user_dw_menu">
+                    <li>
+
+                      <a href="javascript:void(0);" (click)="gotToaffilitaePage()">
+                        <div class="icon-preview"><i class="fas fa-user"></i></div>&nbsp;
+                        <!-- <mat-icon aria-hidden="false" class="mr-2">face</mat-icon> -->
+                        Profile
+                      </a>
+                      <a href="javascript:void(0);" *ngIf="mentorportallogin" (click)="showdirectory(1)">
+                        <mat-icon aria-hidden="false" class="mr-2">contacts</mat-icon>Directory
+                      </a>
+                      <a href="javascript:void(0);" *ngIf="mentorportallogin" (click)="showdirectory(2)">
+                        <!-- <div class="icon-class">fas fa-edit</div> -->
+                        <div class="icon-preview"><i class="fas fa-edit"></i></div>
+                        Suggestion
+                      </a>
+                      <a href="javascript:void(0);" (click)="affiliatelogout()">
+                        <mat-icon aria-hidden="false" style="font-weight: bold;" class="mr-2">power_settings_new
+                        </mat-icon>Logout
+                      </a>
+
+
+
+
+                    </li>
+                  </ul>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </li>
+        <!-- #END# Tasks -->
+      </ul>
+    </div>
+  </div>
+</nav>

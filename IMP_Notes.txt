@@ -1,0 +1,10 @@
+
+signin
+email: "ankitagaikwadv08@gmail.com"
+mobile:"9359010236"
+password: "Test@1234"
+
+superlogin
+email: vidya.pathak@dheya.com
+passward:"Dheya@123"
+

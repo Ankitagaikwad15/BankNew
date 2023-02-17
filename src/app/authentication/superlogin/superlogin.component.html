@@ -1,0 +1,83 @@
+
+<div class="scroll">
+  <mat-sidenav-container align="start" mode="side" opened class="hide-on-small-screens" fxFlexFill class="login-size">
+    
+    <mat-sidenav-content fxFlexFill style="overflow: hidden;">
+    <mat-toolbar style="background-color: white;">
+        <mat-toolbar-row style="overflow: hidden;">
+         
+        </mat-toolbar-row>
+      </mat-toolbar>
+      <mat-sidenav-container fxFlexFill-2>
+
+        <mat-sidenav-content fxFlexFill-2>
+          <div class="limiter">
+            <div class="wrap-login100" style="height:80vh">
+              <div class="login100-more"
+              style="
+              background-image: url('assets/images/pages/signup.png');
+            "></div>
+              <form class="login100-form validate-form" [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+                <span class="login100-form-title pb-5">
+                  Super-Login
+
+                </span>
+
+                <div class="row">
+                  <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width" appearance="outline" color="primary">
+                      <mat-label>UserEmail</mat-label>
+                      <input matInput formControlName="username" />
+                      <mat-icon matSuffix>face</mat-icon>
+                      <mat-error *ngIf="loginForm.get('username').hasError('required')">
+                        UserEmail is required
+                      </mat-error>
+                      <mat-error *ngIf="
+                            loginForm.get('username').hasError('required') ||
+                            loginForm.get('username').touched
+                          ">
+                        Please enter a valid email address
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-xl-12col-lg-12 col-md-12 col-sm-12 mb-2">
+                    <mat-form-field class="example-full-width" appearance="outline" color="primary">
+                      <mat-label>Password</mat-label>
+                      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+                      <a class="show-pwd-icon" href="#" onClick="return false;" matSuffix (click)="hide = !hide"
+                        [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                        <mat-icon>{{
+                          hide ? "visibility_off" : "visibility"
+                          }}</mat-icon>
+                      </a>
+                      <mat-error *ngIf="loginForm.get('password').hasError('required')">
+                        Password is required
+                      </mat-error>
+                    </mat-form-field>
+                  </div>
+                </div>
+              
+
+                <div class="container-login100-form-btn">
+                  <button mat-flat-button color="primary" [disabled]="captchaSucess" class="login100-form-btn"
+                    type="submit">
+                    Login
+                  </button>
+                </div>
+
+                <div *ngIf="loginForm.get('password').errors?.pattern && submitted"
+                  class="alert alert-danger mt-3 mb-0">
+                  Password should contain one uppercase alphabet, one digit, one special
+                  character,min 8-character length
+                </div>
+              </form>
+
+            </div>
+          </div>
+        </mat-sidenav-content>
+      </mat-sidenav-container>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>

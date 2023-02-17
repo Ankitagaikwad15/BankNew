@@ -1,0 +1,98 @@
+<div class="addContainer">
+  <div class="modalHeader">
+    <div class="editRowModal">
+      <div class="modalHeader clearfix">
+        <!-- <img [src]='advanceTable.img' alt="avatar"> -->
+        <div class="modal-about">
+          <div class="font-weight-bold p-t-5 p-l-10 font-17">
+                       <!-- {{dialogTitle}} -->
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div mat-dialog-content>
+    <form [formGroup]="personalForm" (ngSubmit)="personalInfo()">
+      <div class="example-container">
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>First Name</mat-label>
+              <input matInput formControlName="CandidateFirstName" [(ngModel)]="CandidateFirstName"
+                required />
+              <mat-error *ngIf="
+                  personalForm
+                    .get('CandidateFirstName')
+                    .hasError('required')
+                ">
+                First Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Last Name</mat-label>
+              <input matInput formControlName="CandidateLastName" [(ngModel)]="CandidateLastName"
+                required />
+              <mat-error *ngIf="
+                  personalForm
+                    .get('CandidateLastName')
+                    .hasError('required')
+                ">
+                Last Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-sm-6">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Email</mat-label>
+              <input matInput formControlName="email" [(ngModel)]="c_email" required />
+              <mat-error *ngIf="
+                  personalForm.get('email').hasError('required') ||
+                  personalForm.get('email').touched
+                ">
+                Please enter a valid email address
+              </mat-error>
+            </mat-form-field>
+          </div>
+         
+          <div class="col-sm-6">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Mobile No.</mat-label>
+
+              <input matInput formControlName="phone" [(ngModel)]="c_phone" />
+            </mat-form-field>
+          </div>
+          
+        </div>
+        <div class="row">
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Date of Birth</mat-label>
+              <input matInput [matDatepicker]="picker" formControlName="dateOfBirth"
+                [(ngModel)]="userDateOfBirth" />
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </div>
+          <div class="col-md-6">
+            <mat-form-field class="example-full-width" appearance="fill">
+              <mat-label>Gender</mat-label>
+              <mat-select [(ngModel)]="returnGenderValue" formControlName="gender"
+                (selectionChange)="selectGender($event)">
+                <mat-option *ngFor="let gender of genders" [value]="gender.id">
+                  {{ gender.value }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </div>
+        </div>
+      </div>
+      <button mat-raised-button color="primary" type="submit">
+        Save
+      </button>
+    </form>
+  </div>
+</div>

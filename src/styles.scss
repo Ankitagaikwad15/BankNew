@@ -1,0 +1,301 @@
+/* You can add global styles to this file, and also import other style files */
+
+* {
+  font-family: "Poppins";
+}
+
+.fc-dayGridMonth-button,
+.fc-timeGridWeek-button,
+.fc-timeGridDay-button,
+.fc-listWeek-button {
+  text-transform: capitalize;
+}
+
+#corosoul .carousel-indicators {
+  left: 33% !important;
+}
+
+#corosoul li.carousel-slide .carousel-slide {
+  background-size: contain;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-heading
+  .fc-widget-header {
+  text-align: center;
+  padding: 8px 14px;
+}
+
+.fc-list-heading-main {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  float: left;
+  box-sizing: border-box;
+  /* outline: none!important; */
+  font-size: 14px;
+  font-family: "Poppins";
+}
+
+.fc-list-heading-alt {
+  color: #007bff;
+  text-decoration: none;
+  background-color: transparent;
+  float: right;
+  box-sizing: border-box;
+  /* outline: none!important; */
+  font-size: 14px;
+  font-family: "Poppins";
+}
+
+.fc-list-heading-main:hover {
+  color: navy;
+}
+
+.fc-list-heading-alt:hover {
+  color: navy;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item {
+  display: table-row;
+  vertical-align: inherit;
+  border-color: inherit;
+  break-inside: avoid;
+  background-color: #3f51b5 !important;
+  box-sizing: content-box;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-item-time {
+  padding: 8px 23px 8px 23px;
+  border-style: none !important;
+  text-align: left;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-item-marker {
+  padding: 8px 0px 8px 2px;
+  white-space: nowrap;
+  width: 1px;
+  border-style: none !important;
+  text-align: left;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item-time,
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-item-marker,
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-item-title {
+  width: 100%;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-item-marker
+  .fc-event-dot {
+  border: calc(var(--fc-list-event-dot-width, 10px) / 2) solid
+    var(--fc-event-border-color, #3788d8);
+  border-radius: 5px;
+  border-radius: calc(var(--fc-list-event-dot-width, 10px) / 2);
+  box-sizing: content-box;
+  display: inline-block;
+  height: 0;
+  width: 0;
+  background-color: #3788d8;
+}
+
+// .mat-card .fc-view-container .fc-view .fc-scroller .fc-list-table .fc-list-item .fc-list-item-marker,
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-item-title {
+  padding: 8px 13px 8px 5px;
+  border-style: none !important;
+}
+
+.mat-checkbox {
+  font-family: "Roboto", Helvetica, "Neue", sans-serif;
+}
+
+.fc-event-container a {
+  font-family: "Poppins";
+  color: #fff;
+  text-align: left;
+  border-radius: 3px;
+  font-size: 10px;
+  font-family: "Poppins";
+}
+
+.fc-content-skeleton .fc-daygrid-day-event {
+  // font-size: 10px;
+  // font-family: 'Poppins';
+  margin-right: 2px;
+  margin-left: 2px;
+  margin-top: 1px;
+  z-index: 6;
+  padding: 0 10px;
+  color: #fff;
+  text-align: left;
+  border-radius: 3px;
+  position: relative;
+  white-space: nowrap;
+}
+
+tr:first-child > td > .fc-day-grid-event {
+  margin-bottom: 10px;
+}
+
+.fc-day-grid-event .fc-content {
+  padding: 0px 0px;
+}
+
+.fc-day-grid-event .fc-content .fc-time,
+.fc-day-grid-event .fc-content .fc-title {
+  margin-right: 3px;
+  font-weight: 400 !important;
+  text-align: left;
+  font-size: 12px;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-item-title
+  a {
+  padding-left: 119px;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-scroller
+  .fc-list-table
+  .fc-list-item
+  .fc-list-event-graphic
+  a {
+  padding-left: 119px;
+}
+
+// .fc-day-header{
+// }
+.mat-card {
+  font-family: "Roboto", "Helvetica Neue", sans-serif;
+}
+
+.mat-card .fc-toolbar .fc-left h2 {
+  font-size: 16px;
+  margin-top: 4px;
+  font-weight: 500;
+  font-family: "Poppins";
+  font-size: 1.75em;
+}
+
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-head
+  .fc-head-container
+  .fc-row
+  .fc-day-header,
+.mat-card
+  .fc-view-container
+  .fc-view
+  .fc-body
+  .fc-widget-content
+  .fc-day-grid
+  .fc-row
+  .fc-bg
+  .fc-day {
+  font-family: "Poppins";
+}
+
+.fc-axis {
+  font-family: "Poppins";
+}
+
+.mat-header-cell,
+.mat-cell,
+.mat-option-text,
+.mat-form-field-infix {
+  font-family: "Poppins";
+}
+
+.mat-dialog-container {
+  padding: 15px 15px;
+  transform: none;
+}
+
+// timelines scss
+.material-icons {
+  font-family: "Material Icons";
+  font-weight: normal;
+  font-style: normal;
+  font-size: 21px;
+  line-height: 1;
+  letter-spacing: normal;
+  text-transform: none;
+  display: inline-block;
+  white-space: nowrap;
+  word-wrap: normal;
+  direction: ltr;
+  -webkit-font-smoothing: antialiased;
+}
+
+.theme-black .navbar .active {
+  background-color: blue !important;
+}
+
